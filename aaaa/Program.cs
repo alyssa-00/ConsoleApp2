@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Add_a_new_project
+namespace aaaa
 {
     class Program
     {
