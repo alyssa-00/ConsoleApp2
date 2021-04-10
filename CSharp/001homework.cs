@@ -45,15 +45,15 @@ namespace test1
             //Console.WriteLine(a > 9 && (!(a < 11) || a > 10));//False,因为True&&(!(True||False))=True&&(!(True))=True&&False=False
 
 
-            ///5.当a为何值时，结果为true？
+            /////5.当a为何值时，结果为true？
             int a = 12;
             bool result = (a + 3 > 12) && a < 3.14 * 4 && a != 11;//需要用到分支循环，元组，先看后面再回来改
             Console.WriteLine(result);
-            //方法一：
-            //口算： 10，12
+            ////方法一：
+            ////口算： 10，12
 
 
-          
+
 
 
 
