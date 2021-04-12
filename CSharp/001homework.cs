@@ -215,9 +215,15 @@ namespace test1
 
 
 
-            ///6.生成一个元素（值随机）从小到大排列的数组
-            ///冒泡排序
-            //int[] array = { 32, 45, 34, 22, 4, 45, 33, 55, 66, 98 };
+            /////6.生成一个元素（值随机）从小到大排列的数组
+            /////冒泡排序
+            /////
+            //int[] array = new int[10];
+            //Random ra = new Random();
+            //for (int k = 0; k < 10; k++)
+            //{
+            //    array[k] = ra.Next(10, 90);
+            //}
             //for (int i = 0; i < array.Length - 1; i++)
             //{
             //    for (int j = 0; j < array.Length - 1 - i; j++)
