@@ -140,25 +140,44 @@ namespace 面向对象
             //如果发布Problem，需要消耗其设置悬赏数量的帮帮币
             //如果发布Suggest，不需要消耗帮帮币
             //最后将内容存到数据库中，三个类存数据库的方法是完全一样的，现在用Console.WriteLine()代替。根据我们学习的继承和多态知识，实现上述功能
-            ///方法一：
-            //cost(new Article(new string[] { "面向对象" }));
-            //cost(new Problem { Reward = 20 });
-            //cost(new Suggest());
+            //Content fg = new Problem { Author = new User("yezi", "1234a"), Reward = 3 };
+            //Content fgg = new Suggest { Author = new User("yezi", "1234a") };
+            //Content fggg = new Article(new string[] { "面向对象" }) { Author = new User("yezi", "1234a") };
+            //ContentService c = new ContentService();
+            //c.Publish(fg);
+            //c.Publish(fgg);
+            //c.Publish(fggg);
 
-            //static void cost(Content content)
-            //{
-            //    content.Publish();
-            //}
-
-            /////方法二：
-            /////跟HelpMoney联系起来
-            //HelpMoney hel = new HelpMoney();
-            //Console.WriteLine(hel.MoneyChange(new Article(new string[] { "面向对象" })));
-            //Console.WriteLine(hel.MoneyChange(new Problem { Reward = 20 }));
-            //Console.WriteLine(hel.MoneyChange(new Suggest()));
         }
+        ///<面向对象>作业六:抽象类和接口
+        /// 
+        /// </summary>
+        static void AbstractInterface()
+        {
+            //1、思考之前的Content类，该将其抽象成抽象类还是接口？为什么？并按你的想法实现。
+            //一起帮里的求助总结、文章和意见建议，以及他们的评论，都有一个点赞（Agree）/ 踩（Disagree）的功能，
+            //赞和踩都会增减作者及评价者的帮帮点。能不能对其进行抽象？如何实现？
+            ///
+            Article nb = new Article(new string[] { "面向对象" }) { Author = new User("yezi", "1234a"), Voter = new User("yezi", "1234a"), Title = "接口" };
+            nb.Agree();
 
+            //2、引入两个子类EmailMessage和DBMessage，和他们继承的接口ISendMessage（含Send()方法声明），用Console.WriteLine()实现Send()。
+            ///调用：
+            //EmailMessage em = new EmailMessage();//实例变量调用
+            //em.Send();
+            //ISendMessage sm = new DBMessage();//接口变量调用
+            //sm.Send();
 
+            //3、一起帮还可以在好友间发私信，所有又有了IChat接口，其中也有一个Send()方法声明。假设User类同时继承了ISendMessage和IChat，如何处理？
+            ///调用：
+            //User em = new User("yezi", "1234a");
+            //em.Send();//不行，因为重名的时候只能用接口变量去调用
+            ISendMessage sm = new User("yezi", "1234a");
+            sm.Send();
+            IChat ct = new User("yezi", "1234a");
+            ct.Send();
+
+        }
 
 
 
